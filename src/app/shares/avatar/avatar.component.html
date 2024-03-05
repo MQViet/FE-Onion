@@ -1,0 +1,11 @@
+<div class="ratio ratio-1x1">
+    <div class="mask-image d-flex align-items-center justify-content-center">
+        <img *ngIf=""
+                [src]="" 
+                height="100%">
+        <img class="d-flex justify-content-center" 
+                *ngIf="avatar" 
+                src="{{avatar}}" 
+                height="100%">
+    </div>
+</div>

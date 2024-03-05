@@ -1,0 +1,134 @@
+<div class="col-sm-10 mt-2 m-auto p-4">
+    <form [formGroup]="formVideo">
+        <h1 
+            class="font-monospace text-center fw-bold">
+            Đăng tải video của bạn
+        </h1>
+        <div class="row">
+            <div class="col-lg-4 col-xl-4 text-center mt-2">
+                <label
+                    style="color: #ff7d5a;">
+                    Tải Video lên
+                </label>
+                <div class="ratio ratio-16x9 rounded-4 border text-center">
+                    <app-ratio-video 
+                        [videoUrl]="videoUrl" 
+                        [srcVideo]="srcVideo">
+                    </app-ratio-video>
+                    <label 
+                        class="btn" 
+                        style="color: #ff7d5a; border: none; max-height: 75%;" 
+                        for="videoUpload">
+                    </label>
+                    <input 
+                        type="file" 
+                        (change)="upFile($event)" 
+                        class="d-none" 
+                        id="videoUpload">
+                </div>
+                <h4 
+                    *ngIf="fileVideo" 
+                    class="fw-bold">
+                    <span 
+                        style="color: #5c87ec;">
+                        {{fileVideo.name}} /</span>
+                    <span 
+                        style="color: #ff7d5a;">/ 
+                        {{convertMegabyte(fileVideo.size)}} MB
+                    </span>
+                </h4>
+                <label 
+                    style="color: #5c87ec;">
+                    Tải ảnh lên
+                </label>
+                <div class="ratio ratio-16x9 rounded-4 border text-center">
+                    <app-ratio-image
+                        [imageUrl]="imageUrl"
+                        [srcImg]="srcImg">
+                    </app-ratio-image>
+                    <label 
+                        class="btn fw-bold"
+                        style="color: #5c87ec; border: none;" 
+                        for="imgUpload">
+                    </label>
+                    <input 
+                        type="file" 
+                        (change)="upFile($event)" 
+                        class="d-none" 
+                        id="imgUpload">
+                </div>
+                <h4 
+                    *ngIf="fileImg" 
+                    class="fw-bold">
+                    <span 
+                        style="color: #5c87ec;">
+                        {{fileImg.name}} /</span>
+                    <span 
+                        style="color: #ff7d5a;">/ 
+                        {{convertMegabyte(fileImg.size)}} MB
+                    </span>
+                </h4>
+            </div>
+            <div class="col-lg-8 col-xl-8 mt-2">
+                <div class="mb-3 font-monospace">
+                    <label 
+                        for="title" 
+                        class="form-label fw-bold">
+                        Tiêu đề 
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input 
+                        [ngClass]="{'is-invalid': (isSubmit && f['title'].errors)}" 
+                        formControlName="title" 
+                        type="text"
+                        class="form-control" 
+                        placeholder="Thêm tiêu đề để mô tả video của bạn" 
+                        style="color: #ff7d5a;"
+                        id="title">
+                </div>
+                <div class="mb-3 font-monospace">
+                    <label 
+                        for="area" 
+                        class="form-label fw-bold">
+                        Mô tả 
+                        <span class="text-danger">*</span>
+                    </label>
+                    <textarea 
+                        [ngClass]="{'is-invalid': isSubmit && f['description'].errors}" 
+                        formControlName="description"
+                        class="form-control" 
+                        id="area" 
+                        rows="5" 
+                        style="color: #ff7d5a;"
+                        placeholder="Giới thiệu về video của bạn cho người xem">
+                    </textarea>
+                </div>
+                <div class="mt-4 d-flex justify-content-end">
+                    <button 
+                        class="btn" 
+                        style="color: #5c87ec;" 
+                        (click)="closeVideoModal()">
+                        Hủy
+                    </button>
+                    <button 
+                        (click)="onSubmit()" 
+                        class="btn ms-3 text-light"
+                        style="background-color: #ff7d5a; border: none;">
+                        Đăng Tải
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="progress mt-3" 
+            *ngIf="true">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                role="progressbar" 
+                aria-valuenow="100" 
+                aria-valuemin="0" 
+                aria-valuemax="100" 
+                style="width: 90%; background-color: #ff7d5a;">
+                90%
+            </div>
+        </div>
+    </form>
+</div>

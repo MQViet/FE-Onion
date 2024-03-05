@@ -1,0 +1,6 @@
+<div class="ratio ratio-16x9">
+    <div class="w-100 h-100 d-flex justify-content-center rounded-4" style="overflow: hidden;">
+        <img *ngIf="srcImg != null" [src]="srcImg" class="rounded-4">
+        <img *ngIf="srcImg == null" src="{{imageUrl}}" class="rounded-4">
+    </div>
+</div>

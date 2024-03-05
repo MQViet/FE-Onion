@@ -1,0 +1,18 @@
+.avatarsmall {
+    width: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.menu-list {
+    width: 200px;
+    border-radius: 15px;
+    border: 1pt solid gray;
+}
+.menu-list>a {
+    border-radius: 0;
+    color: white;
+}
+.menu-list>a:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+}

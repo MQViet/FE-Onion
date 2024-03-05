@@ -1,0 +1,34 @@
+.background {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.avatar {
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+
+.avatarsmall {
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.name {
+    color: white;
+    font-size: 18pt;
+    position: absolute;
+    top: 100px;
+    left: 150px;
+}
+
+.color {
+    background-color: rgba(0, 0, 0, 0.4);
+}

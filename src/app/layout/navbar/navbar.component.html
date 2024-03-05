@@ -1,0 +1,50 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand">
+    <div ngbDropdown class="container">
+        <a class="navbar-brand text-light" 
+            href="/home">
+            ONION
+        </a>
+        <img ngbDropdownToggle
+            src="{{avatar}}"
+            class="avatarsmall"
+        />
+        <div ngbDropdownMenu
+            class="dropdown-menu dropdown-menu-end bg-dark shadow menu-list mt-2">
+
+            <a ngbDropdownItem 
+                href="/channel"
+                style="color: #ff7d5a;">
+                Kênh của bạn
+            </a>
+
+            <a ngbDropdownItem 
+                href="">
+                Kênh đã đăng ký
+            </a>
+
+            <a ngbDropdownItem 
+                href="">
+                Video đã thích
+            </a>
+
+            <a ngbDropdownItem 
+                href="/manager/video-management">
+                Quản lý video
+            </a>
+
+            <a ngbDropdownItem 
+                href="">
+                Quản lý tài khoản
+            </a>
+
+            <div class="dropdown-divider bg-white"></div>
+
+            <a ngbDropdownItem 
+                href=""
+                style="color: #ff7d5a;">
+                Đăng xuất
+            </a>
+        </div>
+    </div>
+</nav>

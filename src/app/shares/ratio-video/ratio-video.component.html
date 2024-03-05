@@ -1,0 +1,6 @@
+<div class="ratio ratio-16x9">
+    <div class="w-100 h-100 d-flex justify-content-center rounded-4" style="overflow: hidden;">
+        <video autoplay *ngIf="srcVideo != null" [src]="srcVideo" class="rounded-4" controls></video>
+        <img *ngIf="srcVideo == null" src="{{videoUrl}}" class="rounded-4" />
+    </div>
+</div>
